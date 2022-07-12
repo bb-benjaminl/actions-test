@@ -1,0 +1,25 @@
+name: "Call it"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call:
+    uses: bb-benjaminl/workflows/.github/workflows/reuse.yaml
+    with:
+      chart-directory: foo
+      remote-registry: bar
+      strip-chart-lock: true
+  call_again:
+    uses: bb-benjaminl/workflows/.github/workflows/reuse.yaml
+    with:
+      chart-directory: foo2
+      remote-registry: bar2
+      strip-chart-lock: false
+  call_again_again:
+    uses: bb-benjaminl/workflows/.github/workflows/reuse.yaml
+    with:
+      chart-directory: foo3
+      remote-registry: bar4
